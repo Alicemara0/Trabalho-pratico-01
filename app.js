@@ -1,4 +1,4 @@
-function teste(){
+function cartao(){
         const container = document.getElementById("container");
 
     dados.forEach(item => {
@@ -7,15 +7,16 @@ function teste(){
 
         cartao.innerHTML = `
         
-           <div class="card">
-            <img src="${item.imagem}" class="card-img-top" alt="${item.titulo}">
+           <div class="col">
+            <img src="${dados.imagem}" class="card-img-top" alt="${dados.tituloimg}">
+            <h3>${dados.titulo}</h3>
             <div class="card-body">
-                <h5 class="card-title">${item.conteudo}</h5>
-                <p class="card-text">${item.descricao}</p>
+                <p class="card-text">${dados.descricao}</p>
+                <p class="card-title">${dados.conteudo}</p>
             </div>
             </div>
+            <a class="botao-cartao" href="detalhes.html" id=${dados.id}">Leia mais</a>
         `;
-
         container.appendChild(cartao);
     });
 }

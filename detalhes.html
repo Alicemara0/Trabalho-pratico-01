@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Exposição</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./bd.js"></script>
+    <script src="index.html"></script>
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Minas do Horizonte</h1>
+    </header>
+
+    <div id="painel-de-detalhes" class="painel">
+       <script>
+        const container = document.getElementById("painel-de-detalhes");
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get("id"));
+
+        const expo = dados.find(dados => dados.id === id);
+        if (dados) {
+            container.innerHTML = `
+              <img class="painel-img" src="${dados.imagem}" alt="${dados.tituloimg}">
+              <p>${dados.conteudo}</p>
+              <p class="botao-cartao">
+                <a href="index.html">Voltar</a>  
+              </p>
+              `;
+            }
+         else
+            container.innerHTML = "<h2>Notícia não encontrada!</h2>"
+        </script>
+    </div>
+
+    <footer>&copy; 2025 Minas do Horizonte</footer>
+</body>
+
+</html>

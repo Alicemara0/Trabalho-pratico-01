@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./bd.js"></script>
+    <script src="detalhes.html"></script>
 </head>
 <body>
     <header>
         <nav>
-        <div id="título">Minas por horizonte</div>
+        <div id="título">Minas do horizonte</div>
         <a href="infos.html">
         <button class="Maisinformações">Mais informações</button>
         </a>
@@ -28,24 +29,24 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="imagens/imagem1.jpeg" class="d-block w-100 h-100" alt="Museu">
-      <div class="carousel-caption d-none d-md-block">
+      <img src="imagens/O-Pr‚dio-Rosa-15-1.jpg" class="d-block w-100 h-100" alt="Museu">
+      <div class="carousel-caption">
         <h5>O prédio do museu</h5>
         <p>O prédio rosa, edifício de 1897, que hoje compõe o Circuito Liberdade</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="imagens/imagem2.jpeg" class="d-block w-100 h-100" alt="Museu">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Chão de estrelas</h5>
-        <p>Exposição permanente, em que se observa atrvés de lunetas, metais preciosos.</p>
+      <img src="imagens/MUMI-017-Ouro-nativo-1-scaled.jpg" class="d-block w-100 h-100" alt="Museu">
+      <div class="carousel-caption">
+        <h5>OURO NATIVO - Pepita</h5>
+        <p>Acervo do museu - Minerais do Brasil</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="imagens/imagem4.jpeg" class="d-block w-100 h-100" alt="Museu">
-      <div class="carousel-caption d-none d-md-block">
+      <img src="imagens/L¡ngua-Afiada.jpg" class="d-block w-100 h-100" alt="Museu">
+      <div class="carousel-caption">
         <h5>Escultura "Língua afiada"</h5>
-        <p>Exposição temporária.</p>
+        <p>Exposição no andar do metal.</p>
       </div>
     </div>
   </div>
@@ -57,18 +58,26 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+
 </div>
- <h1>Programações setembro/2025</h1>
-<div class="row row-cols-1 row-cols-md-2 g-4" id="container">
+ <h1>Exposições de longa duração</h1>
+<div class="container" id="container">
   <div class="col">
   </div>
 </div>
+
+ <div class="dautor">
+      <h2>Detalhes sobre o(a) autor(a) da página</h2>
+      <img class="autor" src="imagens/foto.autora.png" alt="Alice Mara">
+      <h6>Alice Mara Alves, 18 anos, estudante de SI na PUC Minas.</h6> <br>
+      <p>O meu interesse em desenvolver um site que fale um pouco mais sobre o MM Gerdau, vem das minhas constantes visitas ao museu, desde 2023, seja nas exposições <br> temporárias ou nas de longa duração. Mesmo que veja coisas já vistas antes, há uma grande beleza em cada detalhe do acervo e do edifício em si, é sempre muito <br> bom voltar e ver a criatividade das exposições, ser inspirada pela arte, história e geologia que compõem o Museu das Minas.</p>
+    </div>
     </main>
 
     <footer>&copy; 2025 Minas do Horizonte</footer>
+
     <script>
     const container = document.getElementById("container");
-
     dados.forEach(item => {
         const cartao = document.createElement("div");
         cartao.className = "col";
@@ -77,15 +86,16 @@
         
            <div class="card">
             <img src="${item.imagem}" class="card-img-top" alt="${item.titulo}">
+             <h5>${item.titulo}</h5>
             <div class="card-body">
-                <h5 class="card-title">${item.conteudo}</h5>
                 <p class="card-text">${item.descricao}</p>
             </div>
             </div>
+            <a class="botao-cartao" href="detalhes.html" id=${item.id}">Leia mais </a>
         `;
-
         container.appendChild(cartao);
     });
     </script>
+
 </body>
 </html>
